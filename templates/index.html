@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Physics Game | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <header>
+            <div class="title-container">
+                <h1>AR Physics Game</h1>
+                <div id="level-display" class="level-indicator">Level 1 / 3</div>
+            </div>
+            <nav>
+                <button id="about-btn" class="nav-btn">About Me</button>
+            </nav>
+        </header>
+
+        <div class="game-wrapper">
+            <img id="video-feed" src="{{ url_for('video_feed') }}" width="640" height="480">
+            <div id="game-overlay" class="game-overlay-content"></div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="btn btn-primary">Start</button>
+            <button id="next-level-btn" class="btn btn-secondary" style="display: none;">Next Level</button>
+            <button id="reset-btn" class="btn btn-tertiary">Reset</button>
+        </div>
+    </div>
+
+    <!-- About Me Modal -->
+    <div id="about-modal" class="modal-container" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>About Me</h2>
+            <p>Hi! I'm a passionate developer who loves building interactive and innovative projects. This AR game is a demonstration of combining computer vision, physics simulations, and web technologies.</p>
+            <p>I'm always looking for new challenges and opportunities to grow my skills.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/your-profile-url" target="_blank" class="btn btn-linkedin">My LinkedIn</a>
+                <!-- Add other links like GitHub or a portfolio website here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
