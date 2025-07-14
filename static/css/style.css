@@ -1,0 +1,198 @@
+/* static/css/style.css */
+:root {
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --primary-color: #3f51b5; /* A nice, classic blue */
+    --primary-hover: #4d61c4;
+    --secondary-color: #009688; /* A teal for success states */
+    --secondary-hover: #00ab9a;
+    --tertiary-color: #424242;
+    --tertiary-hover: #535353;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --border-color: #2c2c2c;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 800px;
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.level-indicator {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+.game-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    margin: 0 auto 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#video-feed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn.btn-primary:hover { background-color: var(--primary-hover); }
+
+.btn.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+.btn.btn-secondary:hover { background-color: var(--secondary-hover); }
+
+.btn.btn-tertiary {
+    background-color: var(--tertiary-color);
+    color: var(--text-primary);
+}
+.btn.btn-tertiary:hover { background-color: var(--tertiary-hover); }
+
+
+/* Modal Styles */
+.modal-container {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--surface-color);
+    padding: 2rem 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--text-secondary);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-btn:hover { color: var(--text-primary); }
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.btn-linkedin {
+    background-color: #0077B5;
+    color: white;
+}
